@@ -1,0 +1,22 @@
+// cliente utilizado para conexão com o banco de dados, funciona meio que como um driver de conexão
+generator client {
+  provider = "prisma-client-js"
+}
+
+// conexão e tipo do banco de dados
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// modelo cuja o qual vai demonstrar uma tabela presente no banco de dados
+model Notification {
+  id          String    @id
+  recipientId String
+  content     String
+  category    String
+  readAt      DateTime?
+  cratedAt    DateTime  @default(now())
+
+  @@index([recipientId])
+}
