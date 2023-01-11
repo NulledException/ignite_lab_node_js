@@ -10,7 +10,6 @@ export class InMemoryNotificationsRepository
 
   // intâncio uma função chamada de create cuja a qual recebe como parâmetro uma variável notification do tipo Notification
   async create(notification: Notification) {
-
     // logo após realizo o push da notificação recebida por parâmetro na variável this.notifications intânciada acima
     this.notifications.push(notification);
   }
